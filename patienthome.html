@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Data -->
+    <title>Welcome to Our Patient Portal</title> <!-- Replace with the actual title if needed -->
+
+    <!-- Production Stylesheets -->
+    <link rel="stylesheet" href="assets/production/css/loginRegister.min.css">
+    <!-- Development Stylesheets -->
+    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/lib/css/responsive.css">
+    <link rel="stylesheet" href="assets/lib/css/select2.min.css">
+    <link rel="stylesheet" href="assets/lib/css/spacing.css">
+    <link rel="stylesheet" href="assets/lib/css/style.css">
+    <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+</head>
+
+<body onLoad="typeWriter()">
+    <!-- Header -->
+    <header>
+        <h1>MedBuddy</h1> <!-- Placeholder for header content -->
+        <!-- Include your header content here -->
+    </header>
+
+    <!-- About Start -->
+    <div class="about-page pt_60 pb_30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Welcome to our patient portal</h1>
+                    <h3>Hi John Doe</h3> <!-- Static placeholder for user name -->
+
+                    <div class="faq-group headstyle mt-30">
+                        <div id="accordion">
+                            <div class="faq-item card">
+                                <div class="faq-header" id="heading1">
+                                    <button class="faq-button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1"><i class="fa fa-caret-right"></i> Book An Appointment</button>
+                                </div>
+                                <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
+                                    <div class="faq-body">
+                                        <p>
+                                            <a href="/patienthome/bookappointment/USER_ID" class="btn btn-success btn-large">Book an Appointment</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item card">
+                                <div class="faq-header" id="heading2">
+                                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2"><i class="fa fa-caret-right"></i> Book an Ambulance</button>
+                                </div>
+
+                                <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                                    <div class="faq-body">
+                                        <form action="/patienthome/USER_ID/bookambulance" method="POST" onSubmit="alert('Your ambulance has been booked');" accept-charset="utf-8">
+                                            <div class="form-row row mt_20 contact-form">
+                                                <div class="form-group col-12">
+                                                    <div class="mb-3">
+                                                        <p>Please enter your address in the textarea</p>
+                                                        <textarea class="form-control" id="validationTextarea" placeholder="Address" name="address" autocomplete="off" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-12">
+                                                    <label for="phonenum">Phone Number</label><br />
+                                                    <input id="phonenum" type="tel" class="form-control" placeholder="Phone Number (format:+91'xxxxxxxxxx')" name="phone" pattern="^\d{10}$" minlength="10" autocomplete="off" required>
+                                                </div>
+                                                <div class="form-group col-12">
+                                                    <button type="submit" class="btn btn-success btn-large" name="form_ambulance">Book an Ambulance</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item card">
+                                <div class="faq-header" id="heading3">
+                                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3"><i class="fa fa-caret-right"></i> Current Appointment Details</ button>
+                                </div>
+
+                                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                                    <div class="faq-body">
+                                        <p>
+                                            <h2>Your Current Appointments with us</h2>
+                                            <br>
+                                            <ol>
+                                                <li>
+                                                    <b>Appointment Date: 2023-02-20</b>
+                                                </li>
+                                                <b>Appointment Time:</b>
+                                                10:00 AM <br />
+                                                <b>Disease: </b>
+                                                Fever <br />
+                                                <b>Status: </b>
+                                                Pending
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item card">
+                                <div class="faq-header" id="heading4">
+                                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse3"><i class="fa fa-caret-right"></i> Current Ambulance Details</button>
+                                </div>
+                                <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
+                                    <div class="faq-body">
+                                        <p>
+                                            <h2>Your Booked Ambulance Details</h2>
+                                            <br />
+                                            <ol>
+                                                <li>
+                                                    <b>Booking Date: 2023-02-20</b>
+                                                </li>
+                                                <b>Booking Time: </b>
+                                                10:00 AM <br />
+                                                <b>Address: </b>
+                                                123 Main St, Anytown, USA <br />
+                                                <b>Booking Status: </b>
+                                                Pending <br />
+                                                <b>Journey Status: </b>
+                                                Not Started <br />
+                                                <b>Ambulance Details</b> <br />
+                                                <b>Ambulance Name: </b>
+                                                MedBuddy Ambulance <br />
+                                                <b>Ambulance Phone Number: </b>
+                                                +91 1234567890 <br />
+                                                <b>Ambulance Vehicle Number: </b>
+                                                KA-01-HB-1234 <br />
+                                                <b>Ambulance Type: </b>
+                                                Basic <br />
+                                                <img src="ambulance-image.jpg" alt="Ambulance Image" width="100" height="100">
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item card">
+                                <div class="faq-header" id="heading5">
+                                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse4"><i class="fa fa-caret-right"></i> Past Appointment Details</button>
+                                </div>
+                                <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
+                                    <div class="faq-body">
+                                        <p>
+                                            <h2>Your Past Appointments with us</h2>
+                                            <br />
+                                            <ol>
+                                                <li>
+                                                    <b>Appointment Date: 2023-02-15</b>
+                                                </li>
+                                                <b>Appointment Time: </b>
+                                                10:00 AM <br />
+                                                <b>Disease: </b>
+                                                Fever <br />
+                                                <b>Status: </b>
+                                                Completed <br />
+                                                <b>Prescription: </b> <br />
+                                                <b>Symptoms: </b>
+                                                Fever, Headache <br />
+                                                <b>Tests: </b>
+                                                Blood Test <br />
+                                                <b>Medicines: </b>
+                                                Paracetamol <br />
+                                                <b>Doctor Signature: </b> <br />
+                                                <img src="doctor-signature.jpg" width="100" height="100" alt="signature">
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item card">
+                                <div class="faq-header" id="heading6">
+                                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse5"><i class="fa fa-caret-right"></i> Update Credentials</button>
+                                </div>
+
+                                <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+                                    <div class="faq-body">
+                                        <p>
+                                            <a href="/patienthome/USER_ID/edit" class="btn btn-success btn-large">Update Credentials</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer -->
+    <footer >
+        <p>&copy; 2023 MedBuddy. All rights reserved.</p> <!-- Replace with your footer content -->
+    </footer>
+
+    <script>
+        var i = 0;
+        var txt = 'WELCOME TO MEDBUDDY';
+        var speed = 60;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("typeit").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <script defer src="assets/lib/js/jquery-3.4.1.min.js"></script>
+    <script defer src="assets/lib/js/popper.min.js"></script>
+    <script defer src="assets/lib/js/bootstrap.bundle.min.js"></script>
+    <script defer src="assets/lib/js/all.min.js"></script>
+    <script defer src="assets/lib/js/select2.full.min.js"></script>
+    <script defer src="assets/js/about.js"></script>
+
+</body>
+</html>
